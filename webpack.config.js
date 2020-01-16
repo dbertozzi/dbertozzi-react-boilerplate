@@ -53,7 +53,7 @@ module.exports = env => {
     // applications, this means one entry point. For traditional multi-page apps,
     // we may have multiple entry points.
     // https://webpack.js.org/concepts#entry
-    entry: [path.join(PATH_SOURCE, "./index.js")],
+    entry: [path.join(PATH_SOURCE, "./index.tsx")],
 
     // Tell Webpack where to emit the bundles it creates and how to name them.
     // https://webpack.js.org/concepts#output
@@ -69,11 +69,11 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /\.js$/, // Apply this rule to files ending in .js
+          test: /\.tsx$/, // Apply this rule to files ending in .js
           exclude: /node_modules/, // Don't apply to files residing in node_modules
           use: {
             // Use the following loader and options
-            loader: "babel-loader",
+            loader: "awesome-typescript-loader",
             // We can pass options to both babel-loader and Babel. This option object
             // will replace babel.config.js
             options: {
